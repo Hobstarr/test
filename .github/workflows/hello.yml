@@ -1,5 +1,9 @@
 name: Hello Runner
-on: [workflow_dispatch]
+on:   
+  workflow_dispatch:
+  schedule:
+    - cron: '*/5 * * * *'
+
 jobs:
   say-hi:
     runs-on: ubuntu-latest
@@ -7,7 +11,8 @@ jobs:
       - uses: actions/checkout@v6
       - name: Print stuff
         run: |
-          echo "Hellow from $(hostname)"
+          echo "Hello from $(hostname)"
           uname -a
           pwd
           ls -la
+          echo "That's it for now!"
