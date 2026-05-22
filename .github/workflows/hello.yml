@@ -1,0 +1,13 @@
+name: Hello Runner
+on: [workflow_dispatch]
+jobs:
+  say-hi:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Print stuff
+        run: |
+          echo "Hellow from $(hostname)"
+          uname -a
+          pwd
+          ls -la
