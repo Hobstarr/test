@@ -19,7 +19,7 @@ jobs:
 
       - name: Dispatch Type
         if: github.event_name == 'workflow_dispatch'
-        run: echo "Option: ${{ inputs.environment }}"
+        run: echo "Option: ${{ github.event.inputs.environment }}"
 
       - name: Print stuff
         run: |
